@@ -9,9 +9,8 @@ if ($currentTime % 2 === 1){
   print("{$integerValue} is even");
 }
 
-$monthString = date( "n" );
-$dayString = date( "j" );
-$dateString = "{$monthString}-{$dayString}";
+$dateString = date( "n-j" );
+
 $message = "";
 switch($dateString){
   case "12-25":
