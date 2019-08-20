@@ -18,12 +18,12 @@ $film = [
   ]
 ];
 
-$sentence = "{$film["title"]} was made in {$film["year"]} and directed by {$film["director"]}.<br><br>Cast: ";
-print( $sentence );
-
+$sentence = "{$film["title"]} was made in {$film["year"]} and directed by {$film["director"]}.<br>Cast: ";
+print("<pre> {$sentence} </pre><pre>");
 foreach( $film["cast"] as $stageName => $realName ){
   $sentence2 = "<br>\t{$stageName} - {$realName}";
-  print($sentence2);
+  print("{$sentence2}");
 }
+print(" </pre>");
 
 ?>
