@@ -1,23 +1,24 @@
 <?php
 
-$currentTime = microtime( $get_as_float = TRUE );
+
+$currentTime = microtime(true);
 $integerValue = intval($currentTime);
 
-if ($currentTime % 2 === 1){
+if ($integerValue % 2 === 1){
   print("{$integerValue} is odd");
 } else {
   print("{$integerValue} is even");
 }
 
-$dateString = date( "n-j" );
-
+$dateString = date("n-j");
 $message = "";
+
 switch($dateString){
   case "12-25":
     $message = "merry christmas";
     break;
   case "1-1":
-    $message= "happy new year";
+    $message = "happy new year";
     break;
   case "2-14":
     $message = "happy valentine\'s day";
