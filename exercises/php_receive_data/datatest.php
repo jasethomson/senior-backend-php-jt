@@ -5,13 +5,13 @@ if(empty($_GET['name'])){
   exit();
 }
 
+$json_input = file_get_contents("php://input");
+$input = json_decode($json_input);
 
 $name = $_GET['name'];
 $age = $_GET['age'];
-$favfood = $_POST['favfood'];
 
-$sentence = "Hello, " . $name . ", you are " . $age . " years old, and your favorite food is $favfood";
-
+$sentence = "Hello, " . $name . ", you are " . $age . " years old, and your favorite food is " . $input->{'favfood'};
 print($sentence);
 
 ?>
