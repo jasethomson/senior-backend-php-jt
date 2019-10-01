@@ -1,32 +1,33 @@
 <?php
 
-
-$currentTime = microtime(true);
-$integerValue = intval($currentTime);
-
-if ($integerValue % 2 === 1){
-  print("{$integerValue} is odd");
+$currentTime = intval(microtime(true));
+if($currentTime % 2 === 1){
+  print($currentTime . " is odd" . "<br>");
 } else {
-  print("{$integerValue} is even");
+  print($currentTime . " is even" . "<br>");
 }
 
-$dateString = date("n-j");
-$message = "";
+$dateString = date( "n-j");
+$message = '';
 
 switch($dateString){
-  case "12-25":
-    $message = "merry christmas";
+  case '12-25':
+    $message = 'Merry Christmas';
     break;
-  case "1-1":
-    $message = "happy new year";
+  case '1-1':
+    $message = 'Happy New Year';
     break;
-  case "2-14":
-    $message = "happy valentine\'s day";
+  case '2-14':
+    $message = "Happy Valentine's day";
     break;
-  case "7-4":
-    $message = "fireworks\! yay\!";
+  case '7-4':
+    $message = "fireworks! yay!";
+    break;
+  case '10-1':
+    $message = "not a holiday...";
     break;
 }
-print( $message );
+
+print($message);
 
 ?>
