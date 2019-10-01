@@ -1,29 +1,28 @@
 <?php
 
-$people = ["John","Jane","Sarah","Smithers","Anna"];
-$peopleLength = count($people);
-
-for( $peopleIndex = 0; $peopleIndex < $peopleLength; $peopleIndex++){
-  print("<div> $people[$peopleIndex] </div>");
+$people = ['John', 'Jane', 'Sarah', 'Smithers', 'Anna'];
+$arrayLength = count($people);
+for($peopleI = 0; $peopleI < $arrayLength; $peopleI++){
+  print("<div>" . $people[$peopleI] . "</div>");
 }
 
 $film = [
-  "title" => "The Shawshank Redemption",
-  "year" => 1994,
-  "director" => "Frank Darabont",
-  "cast" => [
-    "Andy Dufresnne" => "Tim Robbins",
-    'Ellis "Red" Redding' => "Morgan Freeman",
-    "Warden Norton" => "Bob Gunton"
+  'title'=>'The Shawshank Redemption',
+  'year'=> 1994,
+  'director'=> 'Frank Darabont',
+  'cast'=> [
+    '        Andy Dufresnne'=> 'Tim Robbins',
+    '        Ellis "Red" Redding'=> 'Morgan Freeman',
+    '        Warden Norton'=> 'Bob Gunton'
   ]
 ];
 
-$sentence = "{$film["title"]} was made in {$film["year"]} and directed by {$film["director"]}.<br>Cast: ";
-print("<pre> {$sentence} </pre><pre>");
-foreach( $film["cast"] as $stageName => $realName ){
-  $sentence2 = "<br>\t{$stageName} - {$realName}";
-  print("{$sentence2}");
+$sentence = $film['title'] . " was made in " . $film['year'] . " and directed by " . $film['director'] . ".<br><br>" . "Cast: ";
+$output = '';
+foreach( $film['cast'] as $key => $value ){
+  $output = $output . "<br>" . $key . " - " . $value;
 }
-print(" </pre>");
+
+print("<pre>" . $sentence . $output . "</pre>");
 
 ?>
